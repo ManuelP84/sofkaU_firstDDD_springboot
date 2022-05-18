@@ -1,4 +1,18 @@
 package com.sofkaU.domainModelImplementation.customer.events;
 
-public class CustomerNameUpdated {
+import co.com.sofka.domain.generic.DomainEvent;
+import com.sofkaU.domainModelImplementation.customer.values.CustomerName;
+
+public class CustomerNameUpdated extends DomainEvent {
+
+    private final CustomerName customerName;
+
+    public CustomerNameUpdated(CustomerName customerName) {
+        super("sofkaU.customer.customerNameUpdated");
+        this.customerName = customerName;
+    }
+
+    public CustomerName customerName(){
+        return this.customerName;
+    }
 }

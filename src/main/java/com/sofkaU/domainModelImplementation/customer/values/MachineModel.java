@@ -1,4 +1,10 @@
 package com.sofkaU.domainModelImplementation.customer.values;
 
-public class MachineModel {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class MachineModel implements ValueObject<String> {
+    @Override
+    public String value() {
+        return null;
+    }
 }

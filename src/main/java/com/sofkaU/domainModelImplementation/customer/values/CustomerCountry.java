@@ -1,4 +1,10 @@
 package com.sofkaU.domainModelImplementation.customer.values;
 
-public class CustomerCountry {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class CustomerCountry implements ValueObject {
+    @Override
+    public Object value() {
+        return null;
+    }
 }
