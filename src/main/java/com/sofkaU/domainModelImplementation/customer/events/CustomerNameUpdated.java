@@ -12,7 +12,7 @@ public class CustomerNameUpdated extends DomainEvent {
         this.customerName = customerName;
     }
 
-    public CustomerName customerName(){
+    public CustomerName getCustomerName(){
         return this.customerName;
     }
 }

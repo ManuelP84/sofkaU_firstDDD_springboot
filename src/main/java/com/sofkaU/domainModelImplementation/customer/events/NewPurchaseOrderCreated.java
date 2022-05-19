@@ -29,23 +29,27 @@ public class NewPurchaseOrderCreated extends DomainEvent {
         this.machineId = machineId;
     }
 
-    public TypeService typeService(){
+    public PurchaseOrderId getPurchaseOrderId(){
+        return this.purchaseOrderId;
+    }
+
+    public TypeService getTypeService(){
         return this.typeService;
     }
 
-    public Description description(){
+    public Description getDescription(){
         return this.description;
     }
 
-    public DateOfService dateOfService(){
+    public DateOfService getDateOfService(){
         return this.dateOfService;
     }
 
-    public Hours hours(){
+    public Hours getHours(){
         return this.hours;
     }
 
-    public MachineId machineId(){
+    public MachineId getMachineId(){
         return this.machineId;
     }
 }

@@ -15,7 +15,11 @@ public class NewMachineAdded extends DomainEvent {
         this.machineModel = machineModel;
     }
 
-    public MachineModel machineModel(){
+    public MachineId getMachineId(){
+        return this.machineId;
+    }
+
+    public MachineModel getMachineModel(){
         return this.machineModel;
     }
 }

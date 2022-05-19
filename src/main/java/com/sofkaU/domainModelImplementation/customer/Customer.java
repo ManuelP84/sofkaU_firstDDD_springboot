@@ -1,9 +1,11 @@
 package com.sofkaU.domainModelImplementation.customer;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkaU.domainModelImplementation.customer.events.*;
 import com.sofkaU.domainModelImplementation.customer.values.*;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -23,6 +25,12 @@ public class Customer extends AggregateEvent<CustomerId> {
     private Customer(CustomerId entityId){
         super(entityId);
         subscribe(new CustomerChange(this));
+    }
+
+    private static Customer from(CustomerId customerId, List<DomainEvent> events){
+        var customer = new Customer(customerId);
+        events.forEach(customer::applyEvent);
+        return customer;
     }
 
     // Domain Behaviors
@@ -64,41 +72,49 @@ public class Customer extends AggregateEvent<CustomerId> {
         appendChange(new CustomerCountryUpdated(customerCountry));
     }
 
-    public void updateMachineModel(MachineModel machineModel){
+    public void updateMachineModel(MachineId entityId, MachineModel machineModel){
+        Objects.requireNonNull(entityId);
         Objects.requireNonNull(machineModel);
-        appendChange(new MachineModelUpdated(machineModel));
+        appendChange(new MachineModelUpdated(entityId, machineModel));
     }
 
-    public void updatePurchaseTypeService(TypeService typeService){
+    public void updatePurchaseTypeService(PurchaseOrderId entityId, TypeService typeService){
         Objects.requireNonNull(typeService);
-        appendChange(new PurchaseTypeServiceUpdated(typeService));
+        appendChange(new PurchaseTypeServiceUpdated(entityId, typeService));
     }
 
-    public void updatePurchaseDescription(Description description){
+    public void updatePurchaseDescription(PurchaseOrderId entityId, Description description){
         Objects.requireNonNull(description);
-        appendChange(new PurchaseDescriptionUpdated(description));
+        appendChange(new PurchaseDescriptionUpdated(entityId, description));
     }
 
-    public void updatePurchaseDateOfService(DateOfService dateOfService){
+    public void updatePurchaseDateOfService(PurchaseOrderId entityId, DateOfService dateOfService){
         Objects.requireNonNull(dateOfService);
-        appendChange(new PurchaseDateOfServiceUpdated(dateOfService));
+        appendChange(new PurchaseDateOfServiceUpdated(entityId, dateOfService));
     }
 
-    public void updatePurchaseHours(Hours hours){
+    public void updatePurchaseHours(PurchaseOrderId entity, Hours hours){
         Objects.requireNonNull(hours);
-        appendChange(new PurchaseHoursUpdated(hours));
+        appendChange(new PurchaseHoursUpdated(entity, hours));
     }
 
-    public void updatePurchaseMachineId(MachineId machineId){
+    public void updatePurchaseMachineId(PurchaseOrderId entityId, MachineId machineId){
         Objects.requireNonNull(machineId);
-        appendChange(new PurchaseMachineIdUpdated(machineId));
+        appendChange(new PurchaseMachineIdUpdated(entityId, machineId));
     }
 
     // Methods
-    public Optional<PurchaseOrder> getPurchaseOrderById(PurchaseOrderId entityId){
+    protected Optional<PurchaseOrder> getPurchaseOrderById(PurchaseOrderId entityId){
         return purchaseOrders()
                 .stream()
                 .filter(purchaseOrder -> purchaseOrder.identity().equals(entityId))
+                .findFirst();
+    }
+
+    protected Optional<Machine> getMachineById(MachineId entityId){
+        return machines()
+                .stream()
+                .filter(machine -> machine.identity().equals(entityId))
                 .findFirst();
     }
 

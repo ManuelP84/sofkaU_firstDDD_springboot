@@ -12,7 +12,7 @@ public class CustomerCountryUpdated extends DomainEvent {
         this.customerCountry = customerCountry;
     }
 
-    public CustomerCountry customerCountry(){
+    public CustomerCountry getCustomerCountry(){
         return this.customerCountry;
     }
 }

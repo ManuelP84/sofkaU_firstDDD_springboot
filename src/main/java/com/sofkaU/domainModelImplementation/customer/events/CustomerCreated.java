@@ -20,4 +20,12 @@ public class CustomerCreated extends DomainEvent {
     public CustomerName getCustomerName() {
         return this.customerName;
     }
+
+    public CustomerAddress getCustomerAddress(){
+        return this.customerAddress;
+    }
+
+    public CustomerCountry getCustomerCountry(){
+        return this.customerCountry;
+    }
 }
