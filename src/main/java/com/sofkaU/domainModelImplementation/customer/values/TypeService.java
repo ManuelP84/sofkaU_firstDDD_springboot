@@ -2,9 +2,24 @@ package com.sofkaU.domainModelImplementation.customer.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+import java.util.Objects;
+
 public class TypeService implements ValueObject<String> {
-    @Override
+
+    private final String value;
+
+    public TypeService(String value) {
+        this.value = Objects.requireNonNull(value);
+        if (this.value.isBlank()){
+            throw new IllegalArgumentException("Type of service can't be empty.");
+        }
+
+        if (this.value.length() < 5){
+            throw new IllegalArgumentException("Type of service must contain at least 5 characters");
+        }
+    }
+
     public String value() {
-        return null;
+        return value;
     }
 }
