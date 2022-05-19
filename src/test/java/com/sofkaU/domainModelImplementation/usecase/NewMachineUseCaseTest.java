@@ -51,5 +51,6 @@ public class NewMachineUseCaseTest {
         var event = (NewMachineAdded)events.get(0);
         Assertions.assertEquals(command.getMachineModel().value(), event.getMachineModel().value());
         //Assertions.assertEquals(command.getCustomerAddress().value(), event.getCustomerAddress().value());
+        Mockito.verify(repository).getEventsBy(ROOTID);
     }
 }
