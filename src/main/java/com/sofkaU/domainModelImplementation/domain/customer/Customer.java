@@ -32,7 +32,7 @@ public class Customer extends AggregateEvent<CustomerId> {
         subscribe(new CustomerChange(this));
     }
 
-    private static Customer from(CustomerId customerId, List<DomainEvent> events){
+    public static Customer from(CustomerId customerId, List<DomainEvent> events){
         var customer = new Customer(customerId);
         events.forEach(customer::applyEvent);
         return customer;

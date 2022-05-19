@@ -8,6 +8,7 @@ import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerAddre
 import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerCountry;
 import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerId;
 import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerName;
+import com.sofkaU.domainModelImplementation.usecase.CreateCustomerUseCase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

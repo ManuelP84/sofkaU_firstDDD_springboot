@@ -8,7 +8,6 @@ import com.sofkaU.domainModelImplementation.domain.customer.commands.CreateCusto
 
 public class CreateCustomerUseCase extends UseCase<RequestCommand<CreateCustomer>, ResponseEvents>{
 
-
     @Override
     public void executeUseCase(RequestCommand<CreateCustomer> createCustomerRequestCommand) {
         var command = createCustomerRequestCommand.getCommand();
