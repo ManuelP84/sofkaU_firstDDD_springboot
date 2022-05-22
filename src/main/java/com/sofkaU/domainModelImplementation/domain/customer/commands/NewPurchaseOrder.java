@@ -2,6 +2,7 @@ package com.sofkaU.domainModelImplementation.domain.customer.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkaU.domainModelImplementation.domain.customer.values.*;
+import com.sofkaU.domainModelImplementation.domain.values.PurchaseOrderId;
 
 public class NewPurchaseOrder extends Command {
 

@@ -1,7 +1,7 @@
 package com.sofkaU.domainModelImplementation.domain.customer.commands;
 
 import co.com.sofka.domain.generic.Command;
-import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerId;
+import com.sofkaU.domainModelImplementation.domain.values.CustomerId;
 import com.sofkaU.domainModelImplementation.domain.customer.values.MachineId;
 import com.sofkaU.domainModelImplementation.domain.customer.values.MachineModel;
 

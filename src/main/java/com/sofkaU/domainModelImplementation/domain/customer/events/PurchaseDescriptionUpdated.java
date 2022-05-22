@@ -2,7 +2,7 @@ package com.sofkaU.domainModelImplementation.domain.customer.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkaU.domainModelImplementation.domain.customer.values.Description;
-import com.sofkaU.domainModelImplementation.domain.customer.values.PurchaseOrderId;
+import com.sofkaU.domainModelImplementation.domain.values.PurchaseOrderId;
 
 public class PurchaseDescriptionUpdated extends DomainEvent {
 

@@ -1,4 +1,4 @@
-package com.sofkaU.domainModelImplementation.domain.customer.values;
+package com.sofkaU.domainModelImplementation.domain.values;
 
 import co.com.sofka.domain.generic.Identity;
 

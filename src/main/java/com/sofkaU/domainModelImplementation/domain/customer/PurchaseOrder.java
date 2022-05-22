@@ -2,6 +2,7 @@ package com.sofkaU.domainModelImplementation.domain.customer;
 
 import co.com.sofka.domain.generic.Entity;
 import com.sofkaU.domainModelImplementation.domain.customer.values.*;
+import com.sofkaU.domainModelImplementation.domain.values.PurchaseOrderId;
 
 import java.util.Objects;
 

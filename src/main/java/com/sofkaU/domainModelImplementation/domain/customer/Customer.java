@@ -4,6 +4,8 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.sofkaU.domainModelImplementation.domain.customer.events.*;
 import com.sofkaU.domainModelImplementation.domain.customer.values.*;
+import com.sofkaU.domainModelImplementation.domain.values.CustomerId;
+import com.sofkaU.domainModelImplementation.domain.values.PurchaseOrderId;
 
 import java.util.List;
 import java.util.Objects;

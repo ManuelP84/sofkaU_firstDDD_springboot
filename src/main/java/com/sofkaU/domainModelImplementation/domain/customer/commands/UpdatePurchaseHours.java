@@ -2,7 +2,7 @@ package com.sofkaU.domainModelImplementation.domain.customer.commands;
 
 import co.com.sofka.domain.generic.Command;
 import com.sofkaU.domainModelImplementation.domain.customer.values.Hours;
-import com.sofkaU.domainModelImplementation.domain.customer.values.PurchaseOrderId;
+import com.sofkaU.domainModelImplementation.domain.values.PurchaseOrderId;
 
 public class UpdatePurchaseHours extends Command {
 

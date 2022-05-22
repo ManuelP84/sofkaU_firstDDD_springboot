@@ -3,7 +3,7 @@ package com.sofkaU.domainModelImplementation.domain.customer.commands;
 import co.com.sofka.domain.generic.Command;
 import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerAddress;
 import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerCountry;
-import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerId;
+import com.sofkaU.domainModelImplementation.domain.values.CustomerId;
 import com.sofkaU.domainModelImplementation.domain.customer.values.CustomerName;
 
 public class CreateCustomer extends Command {
