@@ -106,7 +106,7 @@ public class ServiceLeader extends AggregateEvent<ServiceLeaderId> {
     }
 
     protected Optional<ServiceOrder> findProductById(ServiceOrderId entityId) {
-        return serviceInvoices()
+        return serviceOrders()
                 .stream()
                 .filter((order) -> order.identity().equals(entityId))
                 .findFirst();
