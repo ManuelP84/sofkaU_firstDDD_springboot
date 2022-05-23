@@ -4,7 +4,7 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class CustomerCountry implements ValueObject {
+public class CustomerCountry implements ValueObject<String> {
 
     private final String value;
 
